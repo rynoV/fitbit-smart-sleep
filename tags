@@ -1,0 +1,35 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	0.0.0	/f43463a2/
+#background	resources/styles.css	/^#background {$/;"	i
+.defaultText	resources/styles.css	/^.defaultText {$/;"	c
+0	package.json	/^      "higgs",$/;"	s	array:fitbit.buildTargets
+1	package.json	/^      "meson",$/;"	s	array:fitbit.buildTargets
+2	package.json	/^      "gemini",$/;"	s	array:fitbit.buildTargets
+3	package.json	/^      "mira"$/;"	s	array:fitbit.buildTargets
+@fitbit/sdk	package.json	/^    "@fitbit\/sdk": "~4.0.1",$/;"	s	object:devDependencies
+@fitbit/sdk-cli	package.json	/^    "@fitbit\/sdk-cli": "^1.7.0"$/;"	s	object:devDependencies
+appDisplayName	package.json	/^    "appDisplayName": "Smart Sleep",$/;"	s	object:fitbit
+appType	package.json	/^    "appType": "app",$/;"	s	object:fitbit
+appUUID	package.json	/^    "appUUID": "055ff12f-1b75-4bb3-9754-435325892e75",$/;"	s	object:fitbit
+build	package.json	/^    "build": "fitbit-build",$/;"	s	object:scripts
+buildTargets	package.json	/^    "buildTargets": [$/;"	a	object:fitbit
+debug	package.json	/^    "debug": "fitbit"$/;"	s	object:scripts
+defaultLanguage	package.json	/^    "defaultLanguage": "en-US"$/;"	s	object:fitbit
+devDependencies	package.json	/^  "devDependencies": {$/;"	o
+extends	tsconfig.json	/^  "extends": ".\/node_modules\/@fitbit\/sdk\/sdk-tsconfig.json"$/;"	s
+fitbit	package.json	/^  "fitbit": {$/;"	o
+i18n	package.json	/^    "i18n": {},$/;"	o	object:fitbit
+iconFile	package.json	/^    "iconFile": "resources\/icon.png",$/;"	s	object:fitbit
+license	package.json	/^  "license": "UNLICENSED",$/;"	s
+name	package.json	/^  "name": "smart-sleep",$/;"	s
+private	package.json	/^  "private": true,$/;"	b
+requestedPermissions	package.json	/^    "requestedPermissions": [],$/;"	a	object:fitbit
+scripts	package.json	/^  "scripts": {$/;"	o
+version	package.json	/^  "version": "0.1.0",$/;"	s
+wipeColor	package.json	/^    "wipeColor": "#ffffff",$/;"	s	object:fitbit
