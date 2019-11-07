@@ -14,7 +14,7 @@ ARG GID=1000
 # time.
 RUN \
   usermod --uid ${UID} node && groupmod --gid ${GID} node &&\
-  mkdir /srv/chat && chown node:node /srv/chat
+  mkdir /srv/smart-sleep && chown node:node /srv/smart-sleep
 
 # Run subsequent build steps and the process in the container as the node user,
 # an unprivileged user which comes built into the node image. Without this they
@@ -23,7 +23,7 @@ USER node
 
 # Set the working directory for subsequent commands and containers created from
 # the image
-WORKDIR /srv/chat
+WORKDIR /srv/smart-sleep
 
 # Copies the npm packaging files to the WORKDIR that we set up above. The
 # trailing / tells Docker that the destination is a folder. The reason for
@@ -48,12 +48,12 @@ FROM arm32v7/node:10.16.3-slim AS production
 
 # USER and WORKDIR don't persist into the second stage automatically.
 USER node
-WORKDIR /srv/chat
+WORKDIR /srv/smart-sleep
 
 # Copies the dependencies installed in the preceding development stage into the
 # production stage and makes them owned by root, so the node user can read but
 # not write them.
-COPY --from=development --chown=root:root /srv/chat/node_modules ./node_modules
+COPY --from=development --chown=root:root /srv/smart-sleep/node_modules ./node_modules
 
 # copies the rest of the application files from the host to the working
 # directory in the container

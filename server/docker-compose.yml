@@ -2,8 +2,8 @@
 version: '3.7'
 
 services:
-  # Chat service
-  chat:
+  # Smart sleep service
+  smart-sleep:
     # Built from the Dockerfile in the current directory
     build:
       context: .
@@ -24,11 +24,11 @@ services:
       # Tells Docker to bind mount the current directory on the host at /srv/chat
       # in the container. This means that changes we’ll make to source files on the host will be
       # automatically reflected inside the container, and vice versa.
-      - .:/srv/chat
+      - .:/srv/smart-sleep
       # sets up a named volume called chat_node_modules that contains the directory
       # /srv/chat/node_modules in the container
-      - chat_node_modules:/srv/chat/node_modules
+      - smart-sleep_node_modules:/srv/smart-sleep/node_modules
 
 # Top level volumes entry must contain all named volumes
 volumes:
-  chat_node_modules:
+  smart-sleep_node_modules:
