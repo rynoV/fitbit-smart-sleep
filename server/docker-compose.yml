@@ -1,0 +1,34 @@
+# The version of docker-compose file format we are using
+version: '3.7'
+
+services:
+  # Chat service
+  chat:
+    # Built from the Dockerfile in the current directory
+    build:
+      context: .
+      # Only run the development stage from the Dockerfile because
+      # docker-compose will only be used in dev
+      target: development
+      # Use this to align the node UID with the host's. Linux work around from:
+      # https://jdlm.info/articles/2019/09/06/lessons-building-node-app-docker.html#appendix-dealing-with-uid-mismatches-on-linux
+      args:
+          UID: '1000'
+          GID: '1000'
+    # Run the server
+    command: npx nodemon --legacy-watch index.js
+    # Export port 3000 on the container to port 3000 on the host
+    ports:
+      - '3000:3000'
+    volumes:
+      # Tells Docker to bind mount the current directory on the host at /srv/chat
+      # in the container. This means that changes we’ll make to source files on the host will be
+      # automatically reflected inside the container, and vice versa.
+      - .:/srv/chat
+      # sets up a named volume called chat_node_modules that contains the directory
+      # /srv/chat/node_modules in the container
+      - chat_node_modules:/srv/chat/node_modules
+
+# Top level volumes entry must contain all named volumes
+volumes:
+  chat_node_modules:
