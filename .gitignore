@@ -1,7 +1,6 @@
 node_modules/
 build/
 tags
-yarn.lock
 .env
 Session.vim
 .undodir/
