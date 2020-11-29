@@ -16,7 +16,7 @@ services:
           UID: '1000'
           GID: '1000'
     # Run the server
-    command: npx nodemon --legacy-watch index.js
+    command: npx supervisor index.js
     # Export port 3000 on the container to port 3000 on the host
     ports:
       - '3000:3000'
